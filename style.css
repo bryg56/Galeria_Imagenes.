@@ -10,7 +10,7 @@ body {
 section {
     width: 100%;
     height: 150vh;
-    background: purple;
+    background: rgb(216, 192, 255);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -45,8 +45,8 @@ h1 {
 .container>div div {
     width: 30%;
     height: 80%;
-    background: #000;
     position: relative;
+    cursor: pointer;
 }
 
 .container>div div img {
@@ -62,5 +62,28 @@ h1 {
     text-align: center;
     top: calc( 50% - (58px / 2));
     color: white;
+    display: none;
+    z-index: 3;
+    transition: 1s;
+}
+
+.container>div div:hover span {
     display: block;
+    transition: 1s;
+}
+
+.container>div div::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s;
+}
+
+.container>div div:hover::after {
+    background: rgb(2, 2, 2);
+    opacity: .8;
+    transition: 1s;
 }
